@@ -2,39 +2,37 @@
 import React, { useState } from "react";
 
 type UserType = {
-  sessionId: number;
-  name: string;
-};
+  name: string,
+  sessionId: number
+}
 
 const UseStateExample = () => {
-  const [username, setUsername] = useState("");
-  const [user, setUser] = useState<UserType | null>(null);
-  // OR
-  // const [user, setUser] = useState<UserType>();
+  const [userName, setUserName] = useState("")
+  const [user, setUser] = useState<UserType | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
-  };
+    setUserName(e.target.value)
+  }
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+    e.preventDefault()
     setUser({
-      name: username,
-      sessionId: Math.random(),
-    });
-  };
+      name: userName,
+      sessionId: Math.random()
+    })
+  }
+
   return (
     <div className="useStateExample">
-      {user ? (
-        `${user.name} logged in`
-      ) : (
-        <form>
-          <input type="text" placeholder="Username" onChange={handleChange} />
-          <button onClick={handleClick}>Login</button>
-        </form>
-      )}
-      {/* BE AWARE */}
-      {user?.name}
+      {user ? (`${user.name} logged in`) : (<form>
+        <input type="text"
+          placeholder="Username"
+          onChange={handleChange}
+        />
+        <button onClick={handleClick}>Login</button>
+        <p>{userName}</p>
+      </form>)}
+
     </div>
   );
 };
