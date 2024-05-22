@@ -5,6 +5,7 @@ variable = "hi";
 
 let age = 18;
 
+
 // age="eighteen"
 
 //// EXPLICITLY PROVIDING A TYPE
