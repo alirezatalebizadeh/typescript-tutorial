@@ -1,6 +1,5 @@
 //// TYPESCRIPT AUTOMATICALLY ASSIGNS A TYPE WHEN YOU DEFINE A VARIABLE
 let variable = "hello";
-
 variable = "hi";
 
 let age = 18;
